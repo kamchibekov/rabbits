@@ -19,8 +19,10 @@ class _AuthenticateState extends State<Authenticate> {
   void initState() {
     super.initState();
     if (FirebaseAuth.instance.currentUser != null) {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => Activity()));
+      Future.delayed(Duration.zero, () {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => Activity()));
+      });
     }
   }
 
